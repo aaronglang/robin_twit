@@ -1,0 +1,83 @@
+#popupBody {
+    width: 400px;
+    height: 600px;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 5%;
+    overflow: auto !important;
+}
+
+#buttonHeader {
+    padding-top: 5%;
+    background: var(--time-based-color);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.popup-button-md {
+    color: #21ce99;
+    background-color: #21ce9933;
+    text-transform: capitalize !important;
+    margin-left: 0px !important;
+    width: 100% !important;
+    height: 30px !important;
+    border-radius: 50px !important;
+    box-shadow: none !important;
+    padding: 5% !important;
+}
+
+.popup-button-md:hover {
+    color: var(--time-based-color);
+}
+
+.md-form {
+    background-color: var(--time-based-color) !important;
+}
+
+.md-form input, .portfolio {
+    color: var(--time-based-font-color);
+}
+
+.tableContainer input {
+    width: 100px !important;
+}
+
+.tableContainer {
+    width: 100% !important;
+}
+
+#refresh {
+    width: 40px !important;
+}
+
+#hideChart {
+    float: right !important;
+    font-size: 20px;
+    color: #21ce99;
+    text-transform: capitalize !important;
+    position: relative !important;
+    margin-left: 0px !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50px !important;
+    box-shadow: none !important;
+}
+
+#hideChart:hover {
+    cursor: pointer;
+    color: var(--time-based-font-color);
+}
+
+.expander:hover {
+    cursor: pointer;
+}
+
+.spanners .col {
+    cursor: pointer;
+}
+
+.highlightButton {
+    background-color: #21ce99;
+    color: var(--time-based-color);
+}

@@ -1,0 +1,42 @@
+{
+    "name": "RobinTwit",
+    "version": "1.0.0",
+    "description": "See Tweets for Specific Stock Symbol",
+    "permissions": [
+        "storage", 
+        "notifications",
+        "activeTab",
+        "tabs",
+        "*://*.robinhood.com/*"
+    ],
+    "background": {
+        "scripts": ["./js/jquery.min.js", "background.js"],
+        "matches": [ "https://robinhood.com/*"],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "js": ["./js/jquery.min.js", "./js/content_script.js", "./js/bootstrap.min.js", "./js/bootstrap-table.min.js", "./js/mdb.min.js", "./js/moment.min.js", "./js/Chart.min.js"],
+        "css": ["./css/bootstrap.min.css", "./css/bootstrap-table.min.css", "./css/mdb.min.css", "./css/bootstrap-table.min.css", "./css/styles.css", "./css/injectedStyles.css"],
+        "matches": [ "https://robinhood.com/*"],
+        "all_frames": true
+    }],
+    "commands": {
+        "_execute_browser_action": {
+          "suggested_key": {
+            "windows": "Ctrl+Shift+P",
+            "mac": "Command+Shift+P",
+            "chromeos": "Ctrl+Shift+P",
+            "linux": "Ctrl+Shift+P"
+          }
+        }
+      },
+    "externally_connectable": {
+      "matches": ["*://*.robinhood.com/*"]
+    },
+    "web_accessible_resources": ["interceptor.js", "*.js", "*.html", "Fonts/*.*", "*.ttf", "*.eot", "*.svg", "*.woff", "*.woff2"],
+    "content_security_policy": "script-src 'self' https://platform.twitter.com https://cdn.syndication.twimg.com https://cdnjs.cloudflare.com https://*.execute-api.us-east-1.amazonaws.com; object-src 'self'",
+    "manifest_version": 2
+}

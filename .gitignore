@@ -1,0 +1,9 @@
+# ignore IDE directories
+.vscode
+.vscode/*
+.DS_Store
+.DS_Store/*
+
+# ignore API repsonses
+network_requests
+

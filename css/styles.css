@@ -1,0 +1,85 @@
+:root {
+    --robin-color-1: rgb(33, 206, 153);
+    --twitter-color-1: #1da1f2;
+    --time-based-color: white;
+    --time-based-font-color: #1b1b1d;
+}
+
+ body {
+    background-color: var(--time-based-color) !important;
+}
+
+#tweet {
+    width: 200px !important;
+}
+
+.robinButton {
+    background-color: var(--robin-color-1);
+    padding: 0 !important;
+    width: 50px !important;
+    height: 30px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+}
+
+.robin-button-md {
+    text-transform: capitalize !important;
+    margin-left: 0px !important;
+    width: 100% !important;
+    height: 30px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+    box-shadow: none !important;
+    color: var(--rh__primary-base);
+    background: var(--rh__primary-lightest-base);
+}
+
+.robin-button-md:hover {
+    /* color: rgba(255, 255, 255, 0.795) !important; */
+    color: var(--time-based-color) !important;
+}
+
+.button-col {
+    padding-bottom: 12px !important;
+}
+
+
+.type-button {
+    padding: 0 !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    text-align: center !important;
+    background-color: var(--time-based-color);
+}
+
+.robin-icon-color {
+    color: var(--robin-color-1) !important;
+    background-color: var(--robin-color-1) !important;
+}
+
+.tw {
+    color: var(--twitter-color-1);
+}
+
+.sticky-form {
+    width: 100% !important;
+    background: var(--time-based-color);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-top: 10px;
+}
+
+.sticky-form input {
+    color: var(--time-based-font-color);
+}
+
+.tweetLoading {
+    height: 100% !important;
+}
+
+.highlightButtonMain {
+    background-color: var(--rh__primary-base) !important;
+    color: var(--time-based-color) !important;
+}
