@@ -1,6 +1,6 @@
 {
     "name": "RobinTwits for Robinhood",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "See Latest Stock Tweets in the Robinhood Web-App! Plus, have an Advanced Control Center at your Fingertips!",
     "icons": { "16": "robinhat.png", "48": "robinhat.png", "128": "robinhat.png"},
     "permissions": [
