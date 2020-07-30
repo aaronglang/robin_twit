@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/bootstrap-table.min.css" rel="stylesheet">
+        <link href="../css/mdb.min.css" rel="stylesheet">
+        <link href="../css/styles.css" rel="stylesheet">
+        <link href="../css/popup.css" rel="stylesheet">
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169402994-1"></script>
+    </head>
+    <body>
+        <div id="expandedChart">
+            <div id="chartLoader" class="container">
+                <div class="chartLoaderDiv row align-items-center">
+                    <div class="col-md-12 text-center">
+                        <div class="spinner-border" style="width: 7rem; height: 7rem;" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="expandedChartSpot"></div>
+        </div>
+        <div id="buttonHeader" class="container">
+            <div class="row">
+                <div class="col-4 button-col">
+                    <button type="button" class="btn header-btns popup-button-md text-center highlightButton" id="portfolio">portfolio</button>
+                </div>
+                <div class="col-4 button-col">
+                    <button type="button" class="btn header-btns popup-button-md text-center" id="watchlist">watchlist</button>
+                </div>
+                <div class="col-4 button-col">
+                    <button type="button" class="btn header-btns popup-button-md text-center" id="twitFeed">tweets</button>
+                </div>
+            </div>
+        </div>
+        <div id="popupBody">
+            <div id="tweetContainer" class="container">
+                <div class="md-form form-inline form-sm">
+                    <button id="searchSelect" class="btn type-button animated" type="submit">
+                        <i id="at" class="fas fa-at tw"></i>
+                        <i id="hashtag" class="fas fa-hashtag tw"></i>
+                        <i id="cashtag" class="fas fa-dollar-sign tw"></i>
+                        <i id="list" class="fas fa-list tw"></i>
+                    </button>
+                    <input type="text" placeholder="search" aria-label="Search" id="timelineInput" value="RobinTwits" class="form-control form-control-sm w-50">
+                    <button id='showTimeline' class="btn btn-sm btn-rounded my-0 robinButton" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="chartSpot" class="animated">
+                    <h5>
+                        <strong id="expander">Show Insights&nbsp;<i class="fas fa-plus-circle"></i></strong>
+                        <a class="tweetChart w-inline-block"
+                            href="#"
+                            target="_blank"
+                            title="Tweet">
+                            <i class="fab fa-twitter tw"></i>
+                        </a>
+                    </h5>
+                    <div id="chartDiv"></div>
+                </div>
+                <div id="tweetSpot" class="animated"></div>
+                <div class="d-flex justify-content-center">
+                    <div id="tweetLoader" class="spinner-border text-primary" role="status">
+                        <span class="sr-only text-center">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div id="portfolioDisplay" class="container display animated portfolio text-white">testing</div> -->
+            <div id="chartContainer" class="container display animated portfolio">
+                <div id="totals"></div>
+                <canvas id="myChart"></canvas> 
+                <!-- width="300" height="150" -->
+            </div>
+            <div id="portfolioContainer" class="container animated tables portfolio"></div>
+            <div id="optionsContainer" class="container animated tables portfolio"></div>
+            <div id="cryptoContainer" class="container animated tables portfolio"></div>
+            <div id="watchlistContainer" class="container animated tables"></div>
+        </div>
+        <div id="footer"></div>
+
+        <script type="text/javascript" src="../js/libs/jquery.min.js"></script>
+        <script type="text/javascript" src="../js/libs/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../js/libs/bootstrap-table.min.js"></script>
+        <script type="text/javascript" src="../js/libs/moment.min.js"></script>
+        <!-- <script type="text/javascript" src="js/Chart.min.js"></script> -->
+        <script type="text/javascript" src="../js/libs/chartjsnew.js"></script>
+        <script type="text/javascript" src="../js/libs/hammerjs.js"></script>
+        <script type="text/javascript" src="../js/libs/chartzoom.js"></script>
+        <script type="text/javascript" src="../js/libs/chartjs-plugin-crosshair.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script> -->
+        <script type="text/javascript" src="../js/libs/widgets.js"></script>
+        <script type="text/javascript" src="../js/scripts/frame.js"></script>
+        <script type="text/javascript" src="../js/modules/tableFormatters.js"></script>
+        <script type="module" src="../js/scripts/popup.js"></script>
+    </body>
+</html>

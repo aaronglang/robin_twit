@@ -18,3 +18,47 @@ iframe {
     height: 100% !important;
     width: 100% !important;
 }
+
+.robinButton {
+    background-color: var(--robin-color-1);
+    padding: 0 !important;
+    width: 50px !important;
+    height: 30px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+}
+
+.robin-button-md {
+    text-transform: capitalize !important;
+    margin-left: 0px !important;
+    width: 100% !important;
+    height: 30px !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+    box-shadow: none !important;
+    color: var(--rh__primary-base);
+    background: var(--rh__primary-lightest-base);
+    font-weight: 700 !important;
+}
+
+.robin-button-md:hover {
+    color: var(--time-based-color) !important;
+    background-color: var(--rh__primary-base) !important;
+}
+
+.button-col {
+    padding-bottom: 12px !important;
+}
+
+.highlightButtonMain {
+    background-color: var(--rh__primary-base) !important;
+    color: var(--time-based-color) !important;
+}
+
+td {
+    color: var(--time-based-font-color) !important;
+}
+
+.expandTweetSection {
+    width: 30% !important;
+}

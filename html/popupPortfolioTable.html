@@ -1,0 +1,27 @@
+<div class="container tableContainer">
+    <div class="tabletoolbar">
+        <div id="toolbar" class="w-100">
+            <button type="button" class="btn popup-button-md text-center" id="refresh"><i class="fas fa-sync"></i></button>
+        </div>
+        <table
+            id="portfolioTable"
+            class="table table-striped"
+            data-toggle="table"
+            data-toolbar="#toolbar"
+            data-search-align="right"
+            data-buttons-align="left"
+            data-search="true"
+            data-row-style="rowStyle"
+            data-detail-formatter="chartFormatter"
+            data-detail-view="true"
+            data-detail-view-by-click="true">
+            <thead>
+            <tr>
+                <th class="symbols" data-field="symbol" data-sortable="true" data-formatter="symbolFormatter">Symbol</th>
+                <th data-field="price" data-sortable="true" data-formatter="priceFormatter">Price</th>
+                <th data-field="percent" data-sortable="true" data-formatter="percentFormatter">%</th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+</div>

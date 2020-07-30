@@ -1,11 +1,13 @@
 :root {
-    --robin-color-1: rgb(33, 206, 153);
+    --robin-color-1: #00c805; /* #21ce99 */
+    --robin-color-light: #00c8051a; /* #21ce9933 */
     --twitter-color-1: #1da1f2;
     --time-based-color: white;
     --time-based-font-color: #1b1b1d;
+    --individual-charts-header-color: var(--robin-color-1);
 }
 
- body {
+body {
     background-color: var(--time-based-color) !important;
 }
 
@@ -32,17 +34,17 @@
     box-shadow: none !important;
     color: var(--rh__primary-base);
     background: var(--rh__primary-lightest-base);
+    font-weight: 700 !important;
 }
 
 .robin-button-md:hover {
-    /* color: rgba(255, 255, 255, 0.795) !important; */
-    color: var(--time-based-color) !important;
+    color: var(--time-based-font-color) !important;
+    background-color: var(--rh__primary-base) !important;
 }
 
 .button-col {
     padding-bottom: 12px !important;
 }
-
 
 .type-button {
     padding: 0 !important;
@@ -79,7 +81,35 @@
     height: 100% !important;
 }
 
-.highlightButtonMain {
-    background-color: var(--rh__primary-base) !important;
-    color: var(--time-based-color) !important;
+.tweetChart {
+    float: right;
+}
+
+#expander {
+    color: var(--time-based-font-color);
+}
+
+#expander:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#chartSpot i {
+    color: var(--robin-color-1);
+}
+
+.font-color-norm {
+    color: var(--time-based-font-color);
+}
+
+.tweet {
+    color: var(--time-based-font-color);
+}
+
+.fa-thumbs-down {
+    color: rgba(255,80,0,1)
+}
+
+.fa-thumbs-up {
+    color: rgba(0,200,5,1)
 }
