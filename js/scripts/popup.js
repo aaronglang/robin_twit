@@ -9,20 +9,20 @@ String.prototype.toNumberWithCommas = function() {
 }
 
 // popularity-data cache cleaner
-setInterval( function() {
-    const cached = JSON.parse(window.localStorage.getItem('popularityData'));
-    let updated = {};
-    if(cached) {
-        Object.keys(cached).forEach(key =>{
-            const now = Date.now();
-            const then = new Date(cached[key].created_on);
-            const diff = (now - then) / 60000;
-            if(diff < 30) updated[key] = cached[key];  
-            // else console.log('removing key:', key);
-        });
-        window.localStorage.setItem('popularityData', JSON.stringify(updated));
-    }
-}, 1000 * 60);
+// setInterval( function() {
+//     const cached = JSON.parse(window.localStorage.getItem('popularityData'));
+//     let updated = {};
+//     if(cached) {
+//         Object.keys(cached).forEach(key =>{
+//             const now = Date.now();
+//             const then = new Date(cached[key].created_on);
+//             const diff = (now - then) / 60000;
+//             if(diff < 30) updated[key] = cached[key];  
+//             // else console.log('removing key:', key);
+//         });
+//         window.localStorage.setItem('popularityData', JSON.stringify(updated));
+//     }
+// }, 1000 * 60);
 
 function formatWatchlistTable(stocks) {
     let data = [];
@@ -235,7 +235,7 @@ function setIndividualTotals(data) {
 async function getPopularityData(symbol, span) {
     let data;
     // let url = `http://robintrack.net/api/stocks/${symbol}/popularity_history`;
-    let url = `https://luqvzyvnec.execute-api.us-east-1.amazonaws.com/dev/track/${symbol}`;
+    // let url = `https://luqvzyvnec.execute-api.us-east-1.amazonaws.com/dev/track/${symbol}`;
     let cached = JSON.parse(window.localStorage.getItem('popularityData'));
     if(cached && cached[symbol]) {
         data = cached[symbol].data;
@@ -296,7 +296,7 @@ async function chartBySymbol(data, target) {
     }
     let downloadLink = '';
     if($('#expandedChart').is(':visible')) {
-        formatted.popularity = await getPopularityData(data.symbol);
+        // formatted.popularity = await getPopularityData(data.symbol);
         $('#chartLoader').hide();
         $(`.${data.symbol}`).fadeIn();
     }
@@ -390,7 +390,9 @@ function optionOrderMap(arr, order, watchlist, symbol) {
     let validSymbol;
     if(order.legs[0].executions.length > 0) {
         let type = order.opening_strategy || order.closing_strategy;
-        type = type.match(/call|put/gi)[0];
+        let m = type.match(/call|put/gi);
+        if(m) type = m[0];
+        type = type.replace('_', ' ');
         let ts = order.created_at;
         let buy = (order.legs[0].side === 'buy');
         let found = watchlist.find(s => s.symbol === order.chain_symbol);
@@ -501,7 +503,7 @@ function getOwnedStocks(obj) {
         // $('#shareStandings').attr('href', `${uri}`);
         if(data.length > 7) $table.attr('data-height', '500');
         if(data.length === 0) return;
-        getPopularityData(data[0].symbol);
+        // getPopularityData(data[0].symbol);
         chrome.storage.sync.set({currentUrl: `https://robinhood.com/stocks/${data[0].symbol}`});
         $table.bootstrapTable('destroy');
         $table.bootstrapTable({
@@ -977,11 +979,11 @@ function getChartOptions(data, chartId, download, span, title, color, individual
                         display: expanded
                     }
                 },
-                {
-                    id: 'popularity',
-                    display: false,
-                    // type: 'linear',
-                }
+                // {
+                //     id: 'popularity',
+                //     display: false,
+                //     // type: 'linear',
+                // }
             ],
             xAxes: [
                 {
@@ -1071,30 +1073,30 @@ function linearStockChart(portfolioData, chartId, individual, span = 'day', down
             let popData = [];
             let dts1 = moment(data.ts[0]);
             let dts2 = moment(data.ts[data.ts.length - 1]);
-            if(data.popularity.length > 0) {
-                data.popularity.forEach(p => {
-                    let pts = moment(p.timestamp).startOf('hour');
-                    let found = data.ts.find(m => m.isSame(pts));
-                    if(pts.isBetween(dts1, dts2) && found) {
-                        popData.push({x: pts, y: p.popularity});
-                    }
-                });
-                // console.log(popData.length, data.popularity.length);
-                datasets.push({
-                    yAxisID: 'popularity',
-                    label: '# RH Users Holding',
-                    type: 'scatter',
-                    borderColor: 'green',
-                    backgroundColor: 'transparent',
-                    lineTension: 0,
-                    pointRadius: .5,
-                    showLine: true,
-                    pointHoverRadius: 1,
-                    borderWidth: 1.75,
-                    // hidden: true,
-                    data: popData
-                });
-            }
+            // if(data.popularity.length > 0) {
+            //     data.popularity.forEach(p => {
+            //         let pts = moment(p.timestamp).startOf('hour');
+            //         let found = data.ts.find(m => m.isSame(pts));
+            //         if(pts.isBetween(dts1, dts2) && found) {
+            //             popData.push({x: pts, y: p.popularity});
+            //         }
+            //     });
+            //     // console.log(popData.length, data.popularity.length);
+            //     datasets.push({
+            //         yAxisID: 'popularity',
+            //         label: '# RH Users Holding',
+            //         type: 'scatter',
+            //         borderColor: 'green',
+            //         backgroundColor: 'transparent',
+            //         lineTension: 0,
+            //         pointRadius: .5,
+            //         showLine: true,
+            //         pointHoverRadius: 1,
+            //         borderWidth: 1.75,
+            //         // hidden: true,
+            //         data: popData
+            //     });
+            // }
         }
     }
 
